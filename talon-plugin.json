@@ -1,0 +1,12 @@
+{
+  "name": "web3-components",
+  "version": "1.0.0",
+  "description": "Premade Solana Mobile web3 components for Talon builds: wallet connect, SOL balance, and transaction signing.",
+  "entry": "skills/web3-connect/SKILL.md",
+  "skills": [
+    "skills/web3-connect/SKILL.md",
+    "skills/web3-balance/SKILL.md",
+    "skills/web3-send/SKILL.md"
+  ],
+  "license": "MIT"
+}
