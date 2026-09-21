@@ -1,0 +1,13 @@
+{
+  "registry": "talon-plugins",
+  "version": 1,
+  "plugins": [
+    {
+      "name": "web3-components",
+      "version": "1.0.0",
+      "path": "plugins/web3-components",
+      "description": "Wallet connect button, SOL balance view, and transaction signing for Solana Mobile.",
+      "license": "MIT"
+    }
+  ]
+}

@@ -4,8 +4,8 @@ description: Build, sign, and send Solana transactions through the connected wal
 version: "@wallet-ui/react-native-kit@4.x, @solana/kit@6.x, @solana-program/memo@0.11.x"
 autoAttach: false
 triggers: [import:sendTransactions, content:sendTransactions, content:Instruction]
-license: MIT (see ../../LICENSE)
-source: https://github.com/Luckyisrael/talon-web3-components
+license: MIT (see ../../../LICENSE)
+source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/web3-components)
 ---
 
 # Sign and send (Talon web3-components v1.0.0)

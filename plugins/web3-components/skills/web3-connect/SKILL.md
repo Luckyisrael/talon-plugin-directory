@@ -4,8 +4,8 @@ description: Connect a Solana wallet with Mobile Wallet Adapter via the wallet-u
 version: "@wallet-ui/react-native-kit@4.x, @solana/kit@6.x"
 autoAttach: true
 triggers: [import:useMobileWallet, import:mobile-wallet-adapter, pkg:@wallet-ui, content:connect()]
-license: MIT (see ../../LICENSE)
-source: https://github.com/Luckyisrael/talon-web3-components
+license: MIT (see ../../../LICENSE)
+source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/web3-components)
 ---
 
 # Wallet connect button (Talon web3-components v1.0.0)

@@ -4,8 +4,8 @@ description: Display an address and its SOL balance with TanStack Query. Load wh
 version: "@wallet-ui/react-native-kit@4.x, @solana/kit@6.x"
 autoAttach: false
 triggers: [import:getBalance, content:getBalance, content:lamports]
-license: MIT (see ../../LICENSE)
-source: https://github.com/Luckyisrael/talon-web3-components
+license: MIT (see ../../../LICENSE)
+source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/web3-components)
 ---
 
 # SOL balance view (Talon web3-components v1.0.0)
