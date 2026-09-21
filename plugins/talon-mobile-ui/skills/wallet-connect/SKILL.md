@@ -2,7 +2,7 @@
 name: wallet-connect
 description: Connect a Solana wallet with Mobile Wallet Adapter via the wallet-ui kit. Load when the task touches wallet connection or the connected account.
 version: "@wallet-ui/react-native-kit@4.x, @solana/kit@6.x"
-autoAttach: true
+autoAttach: false
 triggers: [import:useMobileWallet, import:mobile-wallet-adapter, pkg:@wallet-ui, content:connect()]
 license: MIT (see ../../../LICENSE)
 source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/talon-mobile-ui)
