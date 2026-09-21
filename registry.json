@@ -7,7 +7,9 @@
       "version": "1.0.0",
       "path": "plugins/web3-components",
       "description": "Wallet connect button, SOL balance view, and transaction signing for Solana Mobile.",
-      "license": "MIT"
+      "license": "MIT",
+      "repo": "github.com/Luckyisrael/talon-plugin-directory"
     }
-  ]
+  ],
+  "base": "https://raw.githubusercontent.com/Luckyisrael/talon-plugin-directory/main"
 }
