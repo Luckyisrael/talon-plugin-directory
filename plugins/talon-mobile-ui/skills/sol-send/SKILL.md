@@ -1,14 +1,14 @@
 ---
-name: web3-send
+name: sol-send
 description: Build, sign, and send Solana transactions through the connected wallet. Load when the task touches signing, sending, memos, or on-chain writes.
 version: "@wallet-ui/react-native-kit@4.x, @solana/kit@6.x, @solana-program/memo@0.11.x"
 autoAttach: false
 triggers: [import:sendTransactions, content:sendTransactions, content:Instruction]
 license: MIT (see ../../../LICENSE)
-source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/web3-components)
+source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/talon-mobile-ui)
 ---
 
-# Sign and send (Talon web3-components v1.0.0)
+# Sign and send (Talon talon-mobile-ui v1.0.0)
 
 Transactions are built from `@solana/kit` instructions and sent through
 `sendTransactions` from `useMobileWallet()`. The wallet sheet approves;

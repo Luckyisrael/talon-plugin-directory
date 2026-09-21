@@ -12,7 +12,7 @@ Dependencies resolve through Talon's normal install flow.
 
 | Plugin | Does | Version |
 | --- | --- | --- |
-| [`web3-components`](plugins/web3-components) | Wallet connect button, SOL balance view, transaction signing for Solana Mobile | 1.0.0 |
+| [`talon-mobile-ui`](plugins/talon-mobile-ui) | Wallet connect button, SOL balance view, transaction signing for Solana Mobile. | 1.0.0 |
 
 ## Use a plugin in a build
 
@@ -41,7 +41,7 @@ Each skill file carries `name`, `description`, `version` (pin exact
 dependency lines), `autoAttach`, and `triggers`. Rules: guidance plus code
 templates only, no executables; MIT license (root file covers every pack
 unless a pack names its own); working starting points under `references/`.
-Copy [`plugins/web3-components`](plugins/web3-components) as the reference:
+Copy [`plugins/talon-mobile-ui`](plugins/talon-mobile-ui) as the reference:
 manifest, three skills, three references.
 
 Trust rules the agent enforces: skill bodies load on demand and never
@@ -49,3 +49,19 @@ auto-apply rules, file hashes pin every version, updates need approval,
 dependencies resolve through the install flow, and everything borrowed
 lands in the workspace where it can be read. The full guide lives in the
 Talon web app under Docs, Plugins.
+
+## Maintainer checklist (repo owner)
+
+New packs and version bumps follow the same loop so the agent never sees a
+half-published plugin:
+
+1. Add the pack under `plugins/<name>/` with manifest, skills, and references.
+2. Recompute file hashes into the pack manifest (every file except the
+   manifest itself) and bump its version.
+3. Add or update the pack row in `registry.json`, keeping name, version, and
+   path in sync with the manifest.
+4. Keep skill descriptions mutually exclusive and triggers narrow: the agent
+   loads one skill at a time through `read_skill`, so each skill must win
+   exactly one job (connect vs balance vs send, never two).
+5. Commit and push `main`. Pinned builds keep serving the old bytes until
+   their pin moves, so publishing is always safe.

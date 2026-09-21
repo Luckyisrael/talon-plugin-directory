@@ -1,14 +1,14 @@
 ---
-name: web3-balance
+name: sol-balance
 description: Display an address and its SOL balance with TanStack Query. Load when the task touches balances, portfolio headers, or address display.
 version: "@wallet-ui/react-native-kit@4.x, @solana/kit@6.x"
 autoAttach: false
 triggers: [import:getBalance, content:getBalance, content:lamports]
 license: MIT (see ../../../LICENSE)
-source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/web3-components)
+source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/talon-mobile-ui)
 ---
 
-# SOL balance view (Talon web3-components v1.0.0)
+# SOL balance view (Talon talon-mobile-ui v1.0.0)
 
 Balance reads go through the wallet kit's RPC client inside a TanStack
 Query — cached, retried, refetchable. Never fetch in an effect.
