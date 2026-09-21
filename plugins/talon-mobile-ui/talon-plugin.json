@@ -10,12 +10,12 @@
   ],
   "license": "MIT",
   "files": {
-    "README.md": "e5df7a2b4d8e4a3137a14c95c77ab02bdee2236603beb10cda6098f869482984",
+    "README.md": "96b63c92eaa8baffc17eaa377b2378dc4cd744e9411cc3e128e07c6630ec599f",
     "references/balance-view.tsx": "224a8a62717c504ad30707dbddbbd82d759ecc129c67349a3e9d1f661e4c8d79",
     "references/connect-button.tsx": "455aaaa2c9941d253bac2689d80b5b9c2a38c5da81e045b2b1b07ddab529b53b",
     "references/send-transaction.tsx": "1416e52e6843d7110a5c744b0357ba4299b910c9b6b2d25ed34001efc0465e0c",
-    "skills/sol-balance/SKILL.md": "f632fc06ebec85e6e1a41dc19b6bb9410feea17f30e80307bed40c7da23a3d27",
-    "skills/sol-send/SKILL.md": "deef44d40acc5e0d06badf70ede5a56e743e656f78869462619cf9e5ab830092",
-    "skills/wallet-connect/SKILL.md": "49fa1151968e57356521cdc9a1d25674ab0dc4a56570183e0ebced6cb0624fba"
+    "skills/sol-balance/SKILL.md": "d4329670167cbe2159871605e340eea571f3e780d7d2449f839bfd8ce8c34d72",
+    "skills/sol-send/SKILL.md": "a1b05087e72db96a9217e8f0eb5e49a99b113311838e52acd9b8656178231e76",
+    "skills/wallet-connect/SKILL.md": "5f46a3d201d437e800f1385cdccf8abc4378dc7df11764e969d264a82d60177f"
   }
 }
