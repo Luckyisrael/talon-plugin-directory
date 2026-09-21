@@ -16,11 +16,24 @@ Dependencies resolve through Talon's normal install flow.
 
 ## Use a plugin in a build
 
-Ask Talon for the thing: a wallet screen, a balance header, an on-chain
-action. The agent loads the matching skill itself. The first time a new
-plugin loads, you approve its manifest, license, and pinned version.
-State-changing mainnet calls always get your confirmation in the UI before
-anything is sent.
+Pin it for the project in `.talon/plugins.json` — that file is the
+approval, and nothing loads without it:
+
+```json
+{ "plugins": { "talon-mobile-ui": "1.0.0" } }
+```
+
+Then ask Talon for the thing: a wallet screen, a balance header, an
+on-chain action. The agent loads the one matching skill itself, one at a
+time, and reads its full starting point only when the skill names it.
+The first time a new plugin loads, approve its manifest, license, and
+pinned version in the build output. State-changing mainnet calls always
+get your confirmation in the UI before anything is sent.
+
+Updates never land silently: when the directory publishes a newer version,
+your build keeps serving the pinned bytes (from verified cache if needed)
+and the log tells you the exact version to adopt. Edit the pin to update,
+nothing else.
 
 ## Build your own plugin
 
