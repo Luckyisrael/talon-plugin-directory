@@ -1,0 +1,14 @@
+{
+  "name": "moove-payment-api",
+  "version": "1.0.0",
+  "description": "Moove payment API integration patterns for Talon builds.",
+  "entry": "skills/moove-overview/SKILL.md",
+  "skills": [
+    "skills/moove-overview/SKILL.md"
+  ],
+  "license": "MIT",
+  "files": {
+    "README.md": "3074e4f5a6ce1258504cdc60b4e47953fdc8414b7c28154a0a4f5d11a166de37",
+    "skills/moove-overview/SKILL.md": "fa231524186a77769a55c8a2b497f02d5802a5024c982974eedb7aa4dae03173"
+  }
+}

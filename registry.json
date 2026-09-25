@@ -8,7 +8,26 @@
       "path": "plugins/talon-mobile-ui",
       "description": "Wallet connect button, SOL balance view, and transaction signing for Solana Mobile.",
       "license": "MIT",
-      "repo": "github.com/Luckyisrael/talon-plugin-directory"
+      "repo": "github.com/Luckyisrael/talon-plugin-directory",
+      "keywords": ["wallet", "solana", "connect", "balance", "send", "transaction", "sol"]
+    },
+    {
+      "name": "panta-api",
+      "version": "1.0.0",
+      "path": "plugins/panta-api",
+      "description": "Panta API integration patterns for Talon builds.",
+      "license": "MIT",
+      "repo": "github.com/Luckyisrael/talon-plugin-directory",
+      "keywords": ["panta"]
+    },
+    {
+      "name": "moove-payment-api",
+      "version": "1.0.0",
+      "path": "plugins/moove-payment-api",
+      "description": "Moove payment API integration patterns for Talon builds.",
+      "license": "MIT",
+      "repo": "github.com/Luckyisrael/talon-plugin-directory",
+      "keywords": ["moove", "payment"]
     }
   ],
   "base": "https://raw.githubusercontent.com/Luckyisrael/talon-plugin-directory/main"

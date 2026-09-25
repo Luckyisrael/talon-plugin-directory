@@ -13,11 +13,18 @@ Dependencies resolve through Talon's normal install flow.
 | Plugin | Does | Version |
 | --- | --- | --- |
 | [`talon-mobile-ui`](plugins/talon-mobile-ui) | Wallet connect button, SOL balance view, transaction signing for Solana Mobile. | 1.0.0 |
+| [`panta-api`](plugins/panta-api) | Panta API integration patterns for Talon builds. Skill data in authoring. | 1.0.0 |
+| [`moove-payment-api`](plugins/moove-payment-api) | Moove payment API integration patterns for Talon builds. Skill data in authoring. | 1.0.0 |
 
 ## Use a plugin in a build
 
-Pin it for the project in `.talon/plugins.json` — that file is the
-approval, and nothing loads without it:
+When a build needs a capability the project doesn't have — a payment
+provider, a new API — the agent searches this directory with
+`search_plugins`: matches are ranked by your request's words against each
+plugin's name, description, and `keywords`, and each hit shows its
+manifest name, version, and license before anything is enabled. Pick the
+one that fits; the agent adds its pin to `.talon/plugins.json` — that
+file is what you review, and nothing loads without it:
 
 ```json
 { "plugins": { "talon-mobile-ui": "1.0.0" } }
@@ -26,9 +33,8 @@ approval, and nothing loads without it:
 Then ask Talon for the thing: a wallet screen, a balance header, an
 on-chain action. The agent loads the one matching skill itself, one at a
 time, and reads its full starting point only when the skill names it.
-The first time a new plugin loads, approve its manifest, license, and
-pinned version in the build output. State-changing mainnet calls always
-get your confirmation in the UI before anything is sent.
+State-changing mainnet calls always get your confirmation in the UI
+before anything is sent.
 
 Updates never land silently: when the directory publishes a newer version,
 your build keeps serving the pinned bytes (from verified cache if needed)
@@ -46,9 +52,15 @@ A plugin is a folder with a `talon-plugin.json` manifest plus
   "version": "1.0.0",
   "path": "plugins/prediction-markets",
   "description": "Prediction-market SDK patterns for Solana Mobile.",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": ["prediction", "market", "odds", "trading"]
 }
 ```
+
+`keywords` (optional) are the plain-words jobs your pack wins — the
+agent's `search_plugins` ranks matches on name, description, and these,
+so write them the way a user would ask for the capability ("card
+payment", "market odds"), not as internal codenames.
 
 Each skill file carries `name`, `description`, `version` (pin exact
 dependency lines), `autoAttach`, and `triggers`. Rules: guidance plus code
@@ -72,7 +84,8 @@ half-published plugin:
 2. Recompute file hashes into the pack manifest (every file except the
    manifest itself) and bump its version.
 3. Add or update the pack row in `registry.json`, keeping name, version, and
-   path in sync with the manifest.
+   path in sync with the manifest, and its `keywords` pointing at the jobs
+   the skills win (this is what `search_plugins` ranks on).
 4. Keep skill descriptions mutually exclusive and triggers narrow: the agent
    loads one skill at a time through `read_skill`, so each skill must win
    exactly one job (connect vs balance vs send, never two).

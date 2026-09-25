@@ -1,0 +1,14 @@
+{
+  "name": "panta-api",
+  "version": "1.0.0",
+  "description": "Panta API integration patterns for Talon builds.",
+  "entry": "skills/panta-overview/SKILL.md",
+  "skills": [
+    "skills/panta-overview/SKILL.md"
+  ],
+  "license": "MIT",
+  "files": {
+    "README.md": "2b6d17989502a2e10919e9029471e07ef80f0cd5756f000a268509cfd4aa47e4",
+    "skills/panta-overview/SKILL.md": "752d982631c21e62fb0a425ce4675f89a577ab3427505fa50cbf05e97e97830c"
+  }
+}
