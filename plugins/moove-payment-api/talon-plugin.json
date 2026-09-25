@@ -1,14 +1,26 @@
 {
   "name": "moove-payment-api",
-  "version": "1.0.0",
-  "description": "Moove payment API integration patterns for Talon builds.",
+  "version": "1.1.0",
+  "description": "Moove payment links (checkout API), send, receive, and swap flows for moove.xyz.",
   "entry": "skills/moove-overview/SKILL.md",
   "skills": [
-    "skills/moove-overview/SKILL.md"
+    "skills/moove-overview/SKILL.md",
+    "skills/moove-receive/SKILL.md",
+    "skills/moove-send/SKILL.md",
+    "skills/moove-swap/SKILL.md",
+    "skills/moove-widget/SKILL.md"
   ],
   "license": "MIT",
   "files": {
-    "README.md": "3074e4f5a6ce1258504cdc60b4e47953fdc8414b7c28154a0a4f5d11a166de37",
-    "skills/moove-overview/SKILL.md": "fa231524186a77769a55c8a2b497f02d5802a5024c982974eedb7aa4dae03173"
+    "README.md": "2f98a24666d36f76f6fc27a65028c4df71d83c2221ccc2a37a41e3bd022233d4",
+    "references/payment-link-client.ts": "94c660720709c9f4f8f573c21760a1cdc4ee2a4340126d283061d74f8930d40e",
+    "references/receive-screen.tsx": "4d59f0cc739b9ca30affd2a2ee9407f2ff92e0165ec1445d55baddc0a94e1bf8",
+    "references/send-screen.tsx": "b70ad7123b8491291f545f87567b6781583c43c8ba724bca347923a151c9525a",
+    "references/swap-screen.tsx": "0d1be7e59f6d5c0cff39e1e9266b2de65bd2b56d5b46f76699a3cb2081fb6b6a",
+    "skills/moove-overview/SKILL.md": "c81db5e8d228fd3ac176edf1b2430e41f75fd22906275ff0183b0cf5deb8e619",
+    "skills/moove-receive/SKILL.md": "ce6472d0ce0ec602844932d9b0e8dd1833845eb4c9339aba6da745ae4a16268a",
+    "skills/moove-send/SKILL.md": "ac1f16d82322d30853675ee8fe465072b29820042e117b7b19e1698b3e47916a",
+    "skills/moove-swap/SKILL.md": "e3d9da3c08e39fe02fd0447c405207b73911bc6d01ed147d1b6f84e13744219d",
+    "skills/moove-widget/SKILL.md": "2069c88f041c6162d046ca92826d74b312effaa10bc8abaa0c55137166f7ac80"
   }
 }

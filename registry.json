@@ -22,12 +22,12 @@
     },
     {
       "name": "moove-payment-api",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "plugins/moove-payment-api",
-      "description": "Moove payment API integration patterns for Talon builds.",
+      "description": "Moove payment links (checkout API), send, receive, and swap flows for moove.xyz.",
       "license": "MIT",
       "repo": "github.com/Luckyisrael/talon-plugin-directory",
-      "keywords": ["moove", "payment"]
+      "keywords": ["moove", "payment", "payments", "checkout", "invoice", "payment-link", "crypto", "send", "receive", "swap", "bridge", "handle"]
     }
   ],
   "base": "https://raw.githubusercontent.com/Luckyisrael/talon-plugin-directory/main"

@@ -14,7 +14,7 @@ Dependencies resolve through Talon's normal install flow.
 | --- | --- | --- |
 | [`talon-mobile-ui`](plugins/talon-mobile-ui) | Wallet connect button, SOL balance view, transaction signing for Solana Mobile. | 1.0.0 |
 | [`panta-api`](plugins/panta-api) | Panta API integration patterns for Talon builds. Skill data in authoring. | 1.0.0 |
-| [`moove-payment-api`](plugins/moove-payment-api) | Moove payment API integration patterns for Talon builds. Skill data in authoring. | 1.0.0 |
+| [`moove-payment-api`](plugins/moove-payment-api) | Moove payment links (checkout API), send, receive, and swap flows for moove.xyz. | 1.1.0 |
 
 ## Use a plugin in a build
 
