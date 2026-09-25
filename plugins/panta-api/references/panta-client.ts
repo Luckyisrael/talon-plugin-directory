@@ -174,6 +174,109 @@ export type TradeRow = {
   quoteAsset: string
 }
 
+// ── Primary buy ────────────────────────────────────────────────────
+export type Instruction = {
+  programId: string
+  data: string // base64
+  accounts: { pubkey: string; isSigner: boolean; isWritable: boolean }[]
+}
+
+export const primary = {
+  // amountUsdc is HUMAN decimals here ("20.00") — unlike create-flow
+  // fees, which are base units. Never mix the two in one field.
+  quote: (
+    a: PantaAuth,
+    body: { wallet: string; marketId: string; side: 'yes' | 'no'; amountUsdc: string; userId?: string },
+  ) =>
+    call<{ quoteId: string; shares: string; avgPrice: string; feeUsdc: string; expiresAt: string }>(
+      '/primaryorderquote/',
+      { method: 'POST', auth: a, body },
+    ),
+  build: (
+    a: PantaAuth,
+    body: { quoteId: string; wallet: string; userId?: string; maxSlippageBps?: number },
+  ) =>
+    call<{
+      orderId: string
+      instructions: Instruction[]
+      expectedShares: string
+      feeUsdc: string
+      recentBlockhash: string
+      lastValidBlockHeight: number
+      expiresAt: string
+    }>('/primaryorderbuild/', { method: 'POST', auth: a, body }),
+  // Async: registers the signature; does not wait for finalization.
+  submit: (a: PantaAuth, body: { orderId: string; signature: string; wallet?: string }) =>
+    call<{ status: string }>('/primaryordersubmit/', { method: 'POST', auth: a, body }),
+}
+
+// ── Attribution (report / status) ──────────────────────────────────
+export const attribution = {
+  // Fail-closed: tx must be primary_order_usdc or claim_win_usdc.
+  // Idempotent per signature. Creator-fee claims → TX_MISMATCH.
+  report: (
+    a: PantaAuth,
+    body: {
+      signature: string
+      wallet: string
+      marketId: string
+      quoteId?: string
+      clientOrderId?: string
+      userId?: string
+    },
+  ) =>
+    call<{ status: string; kind: 'buy' | 'claim'; side?: 'yes' | 'no' }>('/trades/', {
+      method: 'POST',
+      auth: a,
+      body,
+    }),
+  status: (a: PantaAuth, signature: string, userId?: string) =>
+    call<{
+      signature: string
+      status: 'processed' | 'pending_attribution' | 'unknown' | 'failed'
+      marketId?: string
+    }>(`/trades/${signature}/`, { auth: a, query: { userId } }),
+}
+
+// ── Positions & claims ─────────────────────────────────────────────
+export type Position = {
+  marketId: string
+  category: string | null
+  side: 'yes' | 'no'
+  shares: string
+  phase: MarketRow['phase']
+  claimable: boolean
+  claimed: boolean
+  outcome: 'yes' | 'no' | null
+}
+
+export const positions = {
+  // A holding on both sides returns TWO rows (one per side) — expected.
+  list: (a: PantaAuth, wallet: string) =>
+    call<{ wallet: string; positions: Position[] }>('/positions/', { auth: a, query: { wallet } }),
+}
+
+export const claims = {
+  // Check position.claimable first; re-validated on-chain, fails closed.
+  build: (a: PantaAuth, body: { wallet: string; marketId: string }) =>
+    call<{
+      outcome: string
+      winningShares: string
+      instructions: Instruction[]
+      recentBlockhash: string
+      lastValidBlockHeight: number
+    }>('/claim/build/', { method: 'POST', auth: a, body }),
+  // Graduated-market creator fees — claimableFeesUsdc is BASE units
+  // (6 decimals): "2500000" = 2.50 USDC. Signatures are NOT reportable.
+  creatorFees: (a: PantaAuth, body: { wallet: string; marketId: string }) =>
+    call<{
+      claimableFeesUsdc: string
+      instructions: Instruction[]
+      recentBlockhash: string
+      lastValidBlockHeight: number
+    }>('/claim/creator-fees/build/', { method: 'POST', auth: a, body }),
+}
+
 // Cursor pagination: follow nextCursor until it is null.
 export async function listAllMarkets(a: PantaAuth, q: Parameters<typeof markets.list>[1] = {}) {
   const all: MarketRow[] = []

@@ -1,25 +1,30 @@
 {
   "name": "panta-api",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Panta prediction-market API for live happenings across the globe and Nigeria — market catalog, prices, trades, and the on-chain create flow.",
   "entry": "skills/panta-overview/SKILL.md",
   "skills": [
-    "skills/panta-overview/SKILL.md",
-    "skills/panta-auth/SKILL.md",
     "skills/panta-account/SKILL.md",
+    "skills/panta-auth/SKILL.md",
+    "skills/panta-buy/SKILL.md",
+    "skills/panta-create/SKILL.md",
     "skills/panta-markets/SKILL.md",
-    "skills/panta-create/SKILL.md"
+    "skills/panta-overview/SKILL.md",
+    "skills/panta-positions/SKILL.md"
   ],
   "license": "MIT",
   "files": {
-    "README.md": "243b98ac92becd6a678ea9e2f6d044cd39f749eed36821de3db565c6497e09c1",
+    "README.md": "454b84c7240a19f8d1483bc1eaa802bc8865dee17b782a4217177f1bc105169d",
+    "references/buy-flow.ts": "c442c5ccf12271207a88b6794c10857854aae412900649d597232a2492edf29b",
     "references/create-market-flow.ts": "6dc0ddbf79c025363470ef40702bef2431d55222e4ce37f209203f6c6ccc2c6e",
     "references/markets-screen.tsx": "2472107a83c9b32a8e5154800351183c38a7ecf98b69b0d46b3877e75ea403db",
-    "references/panta-client.ts": "2002bc7d157d710847470d077c2630015b2f5f7a8846cd475aae839c5db2047d",
-    "skills/panta-account/SKILL.md": "8a0b905098825f4e66aff0373100f8ebc6cc73b397fda1106afb86d7451bf174",
-    "skills/panta-auth/SKILL.md": "fc8d12f20f15026f08f1ffe52100fe4a6110393b5bb790994289737de6d649c8",
-    "skills/panta-create/SKILL.md": "af48ff1f3ca131372fa2024bab64e91faf051b655625a3a23455bb1e7f4a2473",
-    "skills/panta-markets/SKILL.md": "63ad287fd818f87f6924e8c044f7b83fbce0745eebfd0a8e3a082755d8e6c844",
-    "skills/panta-overview/SKILL.md": "e2b7407c663550a543773adbb6a6ac53dc7850de2735618852276c1c9ead5e6c"
+    "references/panta-client.ts": "942b003fe7578bde295250680a31f00cf135c45d7bf41d3cf55b024ae6d4e335",
+    "skills/panta-account/SKILL.md": "5d085c34a4a73e01718da3121f43cbaa7f7571bc81824925685441b1ba8433e0",
+    "skills/panta-auth/SKILL.md": "c85276a0969e4ff6d840de6a3560f9239306888f594eea55539a6d4e46aa25b5",
+    "skills/panta-buy/SKILL.md": "42fbfe9f6f25822dbfeb85e0f89c94c334567660e2a2b4058827ef9366a20c4c",
+    "skills/panta-create/SKILL.md": "0bd467b543f0970cf62473cda21fb050a12ad6d4222f21ea62424942c3112f33",
+    "skills/panta-markets/SKILL.md": "780c0929880cc4842cee1b403ec55a067fa23ae25151f4aa596e6d3a7c83665e",
+    "skills/panta-overview/SKILL.md": "592b0ca62f97650ab2851f616000970786ceebe3d2550c1fcf9b26591aea1498",
+    "skills/panta-positions/SKILL.md": "7e9c62c72705122c31f315b8b0bfaf3256bd7b3d8024693fe070854fdcf2790f"
   }
 }

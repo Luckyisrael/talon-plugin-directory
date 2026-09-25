@@ -1,14 +1,14 @@
 ---
 name: panta-auth
 description: Register, log in, rotate refresh JWTs, and read or rename the Panta account. Load when the task is user signup, login, session refresh, or profile on the Panta API.
-version: "1.1.0"
+version: "1.2.0"
 autoAttach: false
 triggers: [content:panta auth, content:panta login, content:panta register, content:panta jwt]
 license: MIT (see ../../../LICENSE)
 source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/panta-api)
 ---
 
-# Panta user auth (Talon panta-api v1.1.0)
+# Panta user auth (Talon panta-api v1.2.0)
 
 Register, login, and refresh are **public** — no API key required.
 Register and login return the same envelope:

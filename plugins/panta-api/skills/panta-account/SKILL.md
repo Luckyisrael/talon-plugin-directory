@@ -1,14 +1,14 @@
 ---
 name: panta-account
 description: Manage Panta API keys (issue, list, revoke), read the dashboard, usage metrics, create sessions, and attributed trades. Load when the task is partner keys, usage numbers, volume or fee reporting on the Panta API.
-version: "1.1.0"
+version: "1.2.0"
 autoAttach: false
 triggers: [content:panta api key, content:panta metrics, content:panta dashboard, content:panta volume]
 license: MIT (see ../../../LICENSE)
 source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/panta-api)
 ---
 
-# Panta account, keys & metrics (Talon panta-api v1.1.0)
+# Panta account, keys & metrics (Talon panta-api v1.2.0)
 
 Everything here authenticates with `X-Api-Key: pk_…` **or** the user
 Bearer JWT. This is the partner surface: your keys and the numbers
@@ -70,5 +70,6 @@ partner estimate, not an invoice.
 
 Rules: one skill, one job — user JWT flows live in `panta-auth`, the
 public market tape in `panta-markets`. Attribution rows are your
-account's slice, never the full tape. Show dollars as
+account's slice, never the full tape; writing attribution
+(report/status) lives in `panta-buy`. Show dollars as
 `base units ÷ 1e6`, and label fee numbers as estimates.

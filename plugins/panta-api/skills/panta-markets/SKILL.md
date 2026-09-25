@@ -1,14 +1,14 @@
 ---
 name: panta-markets
 description: Browse Panta markets — catalog list, filters, categories, spot prices, and the trade tape for a market or wallet. Load when the task is showing prediction markets, prices, volume, or trades on the Panta API.
-version: "1.1.0"
+version: "1.2.0"
 autoAttach: false
 triggers: [content:panta markets, content:panta prices, content:panta trades, content:prediction market list]
 license: MIT (see ../../../LICENSE)
 source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/panta-api)
 ---
 
-# Panta market browsing (Talon panta-api v1.1.0)
+# Panta market browsing (Talon panta-api v1.2.0)
 
 All endpoints below take `X-Api-Key` or the Bearer JWT. The catalog
 comes from the registry — **list responses do not live-RPC prices**;

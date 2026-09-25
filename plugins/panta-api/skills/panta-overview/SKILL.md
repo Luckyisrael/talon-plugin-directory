@@ -1,21 +1,22 @@
 ---
 name: panta-overview
 description: Choose the right Panta surface — user auth, account & keys, market browsing, or market creation — and how API-key vs JWT auth, USDC amounts, and the create flow fit together. Load when Panta or panta.market is mentioned but no single job is named.
-version: "1.1.0"
+version: "1.2.0"
 autoAttach: false
 triggers: [content:panta, content:panta.market, content:prediction market, content:which panta]
 license: MIT (see ../../../LICENSE)
 source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/panta-api)
 ---
 
-# Which Panta job (Talon panta-api v1.1.0)
+# Which Panta job (Talon panta-api v1.2.0)
 
 Panta (panta.market) is a prediction-market platform: markets on live
 happenings — sports, crypto, politics, entertainment, world events —
 priced in USDC on Solana, created through an on-chain
-quote → build → sign → register flow. This pack covers exactly the
-source pages it was authored from (Auth & Account, Markets &
-Creation); the full documentation index lives at
+quote → build → sign → register flow, and traded through the same
+quote-then-build discipline. This pack covers exactly the source
+pages it was authored from (Auth & Account; Markets & Creation;
+Buy, Positions & Claims); the full documentation index lives at
 https://docs.panta.market/llms.txt — fetch it before calling anything
 this pack does not name.
 
@@ -27,6 +28,8 @@ this pack does not name.
 | Manage API keys, dashboard, usage metrics, attributed trades | `panta-account` |
 | Browse markets, spot prices, categories, the trade tape | `panta-markets` |
 | Create a market (quote → build → sign → register) | `panta-create` |
+| Buy shares in a market (quote → build → sign → submit) or report a trade | `panta-buy` |
+| Show holdings, estimate position value, claim winnings or fees | `panta-positions` |
 
 ## Base + auth (applies to every skill)
 
@@ -41,10 +44,14 @@ this pack does not name.
   `UNAUTHORIZED` (401) · `RATE_LIMITED` · `INVALID_MARKET_PARAMS` ·
   `MARKET_NOT_FOUND` · `EMAIL_TAKEN` (409) · `CREATE_NOT_PERMITTED` ·
   `DUPLICATE_MARKET` · `CREATE_EXPIRED` · `TX_NOT_FOUND` ·
-  `TX_FAILED` · `TX_MISMATCH` · `TX_FEE_MISMATCH`.
+  `TX_FAILED` · `TX_MISMATCH` · `TX_FEE_MISMATCH` ·
+  `MARKET_NOT_IN_PRIMARY` · `AMOUNT_TOO_SMALL` · `QUOTE_EXPIRED` ·
+  `QUOTE_STALE` · `NOT_CLAIMABLE` · `NOT_MARKET_CREATOR` ·
+  `MARKET_NOT_GRADUATED` · `NO_CREATOR_FEES`.
 - Amounts come in two shapes and must never be mixed in one field:
   human decimal strings (`"20.00"`) and USDC **base units** integer
-  strings — 6 decimals, so `"20000000"` is $20.00.
+  strings — 6 decimals, so `"20000000"` is $20.00. Which one a field
+  wants is named per skill.
 - Pagination on list endpoints is a cursor: pass `nextCursor` back as
   `cursor` until it is null.
 
@@ -57,6 +64,5 @@ mainnet step asks the user in the UI before anything is signed.
 
 Rules: pick the skill by job and load one at a time — never several
 just in case. Do not build against guessed endpoints or invented auth:
-if the job is outside this pack (positions, partner trade reporting,
-the create-quote fees page), fetch https://docs.panta.market/llms.txt
-for the real reference first.
+if the job is outside this pack, fetch
+https://docs.panta.market/llms.txt for the real reference first.

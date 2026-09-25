@@ -1,14 +1,14 @@
 ---
 name: panta-create
 description: Create a Panta market end to end — image upload, quote, build the transaction, sign and broadcast, then register. Load when the task is launching a prediction market on the Panta API.
-version: "1.1.0"
+version: "1.2.0"
 autoAttach: false
 triggers: [content:panta create, content:panta quote, content:create market, content:panta register]
 license: MIT (see ../../../LICENSE)
 source: https://github.com/Luckyisrael/talon-plugin-directory (plugins/panta-api)
 ---
 
-# Panta market creation (Talon panta-api v1.1.0)
+# Panta market creation (Talon panta-api v1.2.0)
 
 The create flow is four steps in a fixed order — each is a state
 transition, and the session status tells you where you are:
