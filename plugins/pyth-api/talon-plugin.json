@@ -1,0 +1,14 @@
+{
+  "name": "pyth-api",
+  "version": "1.0.0",
+  "description": "Pyth API — real-time price feeds, continuous indices, and a data marketplace of publishers for global market data.",
+  "entry": "skills/pyth-overview/SKILL.md",
+  "skills": [
+    "skills/pyth-overview/SKILL.md"
+  ],
+  "license": "MIT",
+  "files": {
+    "README.md": "2795669077ee6e00a668968aa5638b5f39ff4e506da1530f382e25174e6a5d97",
+    "skills/pyth-overview/SKILL.md": "bc3562233c37df8302039a9eda1838c4df25c024a132124ec653450f9f070d84"
+  }
+}

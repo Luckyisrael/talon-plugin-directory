@@ -13,8 +13,9 @@ Dependencies resolve through Talon's normal install flow.
 | Plugin | Does | Version |
 | --- | --- | --- |
 | [`talon-mobile-ui`](plugins/talon-mobile-ui) | Wallet connect button, SOL balance view, transaction signing for Solana Mobile. | 1.0.0 |
-| [`panta-api`](plugins/panta-api) | Panta API integration patterns for Talon builds. Skill data in authoring. | 1.0.0 |
+| [`panta-api`](plugins/panta-api) | Panta prediction-market API for live happenings across the globe and Nigeria — catalog, prices, trades, on-chain create flow. | 1.1.0 |
 | [`moove-payment-api`](plugins/moove-payment-api) | Moove payment links (checkout API), send, receive, and swap flows for moove.xyz. | 1.1.0 |
+| [`pyth-api`](plugins/pyth-api) | Real-time price feeds, continuous indices, and a data marketplace of publishers. Overview authored; API details in authoring. | 1.0.0 |
 
 ## Use a plugin in a build
 
@@ -53,14 +54,17 @@ A plugin is a folder with a `talon-plugin.json` manifest plus
   "path": "plugins/prediction-markets",
   "description": "Prediction-market SDK patterns for Solana Mobile.",
   "license": "MIT",
-  "keywords": ["prediction", "market", "odds", "trading"]
+  "keywords": ["prediction", "market", "odds", "trading"],
+  "website": "https://example.market"
 }
 ```
 
 `keywords` (optional) are the plain-words jobs your pack wins — the
 agent's `search_plugins` ranks matches on name, description, and these,
 so write them the way a user would ask for the capability ("card
-payment", "market odds"), not as internal codenames.
+payment", "market odds"), not as internal codenames. `website` (optional)
+is the project's site: the Talon web app's `/plugins` page shows it as
+the card's Website link when present.
 
 Each skill file carries `name`, `description`, `version` (pin exact
 dependency lines), `autoAttach`, and `triggers`. Rules: guidance plus code

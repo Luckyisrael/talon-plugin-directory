@@ -13,12 +13,13 @@
     },
     {
       "name": "panta-api",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "plugins/panta-api",
-      "description": "Panta API integration patterns for Talon builds.",
+      "description": "Panta prediction-market API for live happenings across the globe and Nigeria — market catalog, prices, trades, and the on-chain create flow.",
       "license": "MIT",
       "repo": "github.com/Luckyisrael/talon-plugin-directory",
-      "keywords": ["panta"]
+      "website": "https://panta.market",
+      "keywords": ["panta", "prediction", "markets", "nigeria", "live", "events", "trading", "prices", "sports", "crypto", "solana", "usdc"]
     },
     {
       "name": "moove-payment-api",
@@ -27,7 +28,17 @@
       "description": "Moove payment links (checkout API), send, receive, and swap flows for moove.xyz.",
       "license": "MIT",
       "repo": "github.com/Luckyisrael/talon-plugin-directory",
+      "website": "https://www.moove.xyz",
       "keywords": ["moove", "payment", "payments", "checkout", "invoice", "payment-link", "crypto", "send", "receive", "swap", "bridge", "handle"]
+    },
+    {
+      "name": "pyth-api",
+      "version": "1.0.0",
+      "path": "plugins/pyth-api",
+      "description": "Pyth API — real-time price feeds, continuous indices, and a data marketplace of publishers for global market data.",
+      "license": "MIT",
+      "repo": "github.com/Luckyisrael/talon-plugin-directory",
+      "keywords": ["pyth", "price", "prices", "feeds", "oracle", "indices", "market data", "marketplace", "real-time", "data"]
     }
   ],
   "base": "https://raw.githubusercontent.com/Luckyisrael/talon-plugin-directory/main"

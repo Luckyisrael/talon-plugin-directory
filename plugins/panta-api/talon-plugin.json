@@ -1,14 +1,25 @@
 {
   "name": "panta-api",
-  "version": "1.0.0",
-  "description": "Panta API integration patterns for Talon builds.",
+  "version": "1.1.0",
+  "description": "Panta prediction-market API for live happenings across the globe and Nigeria — market catalog, prices, trades, and the on-chain create flow.",
   "entry": "skills/panta-overview/SKILL.md",
   "skills": [
-    "skills/panta-overview/SKILL.md"
+    "skills/panta-overview/SKILL.md",
+    "skills/panta-auth/SKILL.md",
+    "skills/panta-account/SKILL.md",
+    "skills/panta-markets/SKILL.md",
+    "skills/panta-create/SKILL.md"
   ],
   "license": "MIT",
   "files": {
-    "README.md": "2b6d17989502a2e10919e9029471e07ef80f0cd5756f000a268509cfd4aa47e4",
-    "skills/panta-overview/SKILL.md": "752d982631c21e62fb0a425ce4675f89a577ab3427505fa50cbf05e97e97830c"
+    "README.md": "243b98ac92becd6a678ea9e2f6d044cd39f749eed36821de3db565c6497e09c1",
+    "references/create-market-flow.ts": "6dc0ddbf79c025363470ef40702bef2431d55222e4ce37f209203f6c6ccc2c6e",
+    "references/markets-screen.tsx": "2472107a83c9b32a8e5154800351183c38a7ecf98b69b0d46b3877e75ea403db",
+    "references/panta-client.ts": "2002bc7d157d710847470d077c2630015b2f5f7a8846cd475aae839c5db2047d",
+    "skills/panta-account/SKILL.md": "8a0b905098825f4e66aff0373100f8ebc6cc73b397fda1106afb86d7451bf174",
+    "skills/panta-auth/SKILL.md": "fc8d12f20f15026f08f1ffe52100fe4a6110393b5bb790994289737de6d649c8",
+    "skills/panta-create/SKILL.md": "af48ff1f3ca131372fa2024bab64e91faf051b655625a3a23455bb1e7f4a2473",
+    "skills/panta-markets/SKILL.md": "63ad287fd818f87f6924e8c044f7b83fbce0745eebfd0a8e3a082755d8e6c844",
+    "skills/panta-overview/SKILL.md": "e2b7407c663550a543773adbb6a6ac53dc7850de2735618852276c1c9ead5e6c"
   }
 }
